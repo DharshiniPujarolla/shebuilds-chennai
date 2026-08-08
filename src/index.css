@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+:root {
+  /* Core Palette CSS Variables */
+  --color-near-black: #08080c;
+  --color-near-black-muted: #12121b;
+  --color-white: #ffffff;
+  --color-neutral-soft: #f8f9fd;
+  --color-neutral-muted: #eeeff6;
+  --color-neutral-border: rgba(255, 255, 255, 0.1);
+  
+  /* Primary Violet/Purple Accents */
+  --color-purple-primary: #7c3aed;
+  --color-purple-hover: #6d28d9;
+  --color-purple-light: #f3e8ff;
+  --color-purple-accent: #a855f7;
+  --color-purple-glow: rgba(124, 58, 237, 0.25);
+
+  /* Typography Defaults */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+
+  --color-near-black: var(--color-near-black);
+  --color-near-black-muted: var(--color-near-black-muted);
+  --color-neutral-soft: var(--color-neutral-soft);
+  --color-neutral-muted: var(--color-neutral-muted);
+  --color-neutral-border: var(--color-neutral-border);
+  
+  --color-purple-primary: var(--color-purple-primary);
+  --color-purple-hover: var(--color-purple-hover);
+  --color-purple-light: var(--color-purple-light);
+  --color-purple-accent: var(--color-purple-accent);
+  --color-purple-glow: var(--color-purple-glow);
+}
+
+/* Global Reset & Base Styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  background-color: var(--color-near-black);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-near-black);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+  line-height: 1.5;
+}
+
+/* Heading Typography Reset */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.035em;
+  font-weight: 800;
+}
+
+/* Custom Utility Classes */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Giant Background SHE Typography */
+.giant-she-text {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  line-height: 0.8;
+  user-select: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(124, 58, 237, 0.03) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Atmospheric Dark Hero Pattern */
+.bg-hero-pattern {
+  background-color: #08080c;
+  background-image: 
+    radial-gradient(ellipse 90% 70% at 50% -20%, rgba(124, 58, 237, 0.3), transparent),
+    radial-gradient(ellipse 60% 60% at 85% 50%, rgba(168, 85, 247, 0.16), transparent),
+    radial-gradient(circle at 10% 40%, rgba(109, 40, 217, 0.15), transparent),
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+}
+
+/* Custom Glowing Radial Utilities */
+.purple-glow-effect {
+  box-shadow: 0 0 35px rgba(124, 58, 237, 0.35), inset 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.glass-panel {
+  background: rgba(16, 16, 24, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-panel-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(24, 24, 38, 0.9);
+  border-color: rgba(168, 85, 247, 0.45);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.3);
+}
+
+/* Animation Utilities */
+@keyframes pulseLaser {
+  0%, 100% {
+    opacity: 0.3;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    opacity: 0.9;
+    stroke-dashoffset: 24;
+  }
+}
+
+.animate-laser-pulse {
+  animation: pulseLaser 4s ease-in-out infinite;
+}
+
+/* Focus Ring Accessibility Defaults */
+:focus-visible {
+  outline: 2px solid var(--color-purple-accent);
+  outline-offset: 2px;
+}
