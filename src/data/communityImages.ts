@@ -3,34 +3,34 @@ import type { CommunityImageItem } from '../types'
 export const communityImages: CommunityImageItem[] = [
   {
     id: 'woman-coding',
-    url: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop',
+    url: '/images/1.jpg',
     name: 'Software Engineer & Builder',
     role: 'Full-Stack Engineer',
-    alt: 'Woman developer coding on laptop in modern tech workspace',
+    alt: 'Woman software engineer and builder',
     shape: 'circle'
   },
   {
     id: 'woman-leader',
-    url: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop',
+    url: '/images/2.jpg',
     name: 'Tech Founder',
     role: 'AI Startup Founder',
-    alt: 'Confident woman technology leader smiling in tech studio',
+    alt: 'Woman technology founder and entrepreneur',
     shape: 'portrait'
   },
   {
     id: 'woman-speaker',
-    url: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=600&auto=format&fit=crop',
+    url: '/images/3.jpg',
     name: 'Keynote Speaker',
     role: 'DevRel & Community Lead',
-    alt: 'Woman presenting at a technology conference keynote',
+    alt: 'Woman technology speaker and community leader',
     shape: 'rounded'
   },
   {
     id: 'woman-mentor',
-    url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
+    url: '/images/4.jpg',
     name: 'Engineering Manager',
     role: 'Mentor & Cloud Architect',
-    alt: 'Senior woman engineer collaborating with team members',
+    alt: 'Woman engineering manager and mentor',
     shape: 'circle'
   }
 ]
