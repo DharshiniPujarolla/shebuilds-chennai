@@ -3,7 +3,7 @@ import { motion, useAnimationControls, useReducedMotion } from 'framer-motion'
 import type { FloatingBubbleData } from '../types'
 import { communityImages } from '../data/communityImages'
 import { CommunityImage } from './CommunityImage'
-import { Sparkles, Star } from 'lucide-react'
+import { Star } from 'lucide-react'
 
 interface FloatingBubbleProps {
   bubble: FloatingBubbleData
