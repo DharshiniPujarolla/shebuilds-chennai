@@ -1,1 +1,1 @@
-# shebuilds-chennai
+Home Page for SheBuilds, Chennai
