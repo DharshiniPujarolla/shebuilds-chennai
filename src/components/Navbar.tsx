@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import type { NavItem } from '../types'
 
+import logo from '../assets/shebuilds-logo.png'
 import { MobileMenu } from './MobileMenu'
 import { ArrowRight, Menu } from 'lucide-react'
+
 
 const navItems: NavItem[] = [
   { label: 'Home', href: '#home' },
@@ -47,9 +49,14 @@ export function Navbar() {
           {/* Logo / Wordmark */}
           <a 
             href="#home" 
-            className="group inline-flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-lg p-1"
+            className="group inline-flex items-center gap-2.5 sm:gap-3 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-lg p-1"
             aria-label="SheBuilds Chennai Home"
           >
+            <img
+              src={logo}
+              alt="SheBuilds Chennai logo"
+              className="h-10 w-10 sm:h-12 sm:w-12 object-contain shrink-0"
+            />
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
                 <span className="font-heading font-extrabold text-xl sm:text-2xl tracking-tight text-white group-hover:text-purple-200 transition-colors">
