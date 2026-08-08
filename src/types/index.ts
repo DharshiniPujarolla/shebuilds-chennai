@@ -40,7 +40,7 @@ export interface FloatingBubbleData {
   label?: string
   imageId?: string
   iconName?: string
-  variant: 'circle' | 'blob' | 'portrait' | 'pill' | 'ring' | 'star' | 'dot' | 'spark'
+  variant: 'circle' | 'blob' | 'pill' | 'ring' | 'star' | 'dot' | 'portrait' | 'spark'
   finalPosition: { x: number; y: number }
   burstDelay: number
   burstDuration: number

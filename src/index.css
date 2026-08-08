@@ -65,6 +65,21 @@ body {
   line-height: 1.5;
 }
 
+/* Custom Wand Cursor Global Hiding on Desktop */
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  [data-cursor],
+  [role="button"] {
+    cursor: none !important;
+  }
+}
+
 /* Heading Typography Reset */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
