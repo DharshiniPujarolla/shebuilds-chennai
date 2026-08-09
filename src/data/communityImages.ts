@@ -41,5 +41,13 @@ export const communityImages: CommunityImageItem[] = [
     role: 'Community Builder',
     alt: 'SheBuilds community member',
     shape: 'portrait'
+  },
+  {
+    id: 'woman-6',
+    url: '/images/6.jpg',
+    name: 'Tech Community Leader',
+    role: 'Product & Community Lead',
+    alt: 'Woman tech community leader',
+    shape: 'portrait'
   }
 ]

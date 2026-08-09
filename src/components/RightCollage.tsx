@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react'
 
 // Decorative, non-interactive collage component
 export function RightCollage() {
-  const images = communityImages.slice(0, 5)
+  const images = communityImages.slice(0, 6)
 
   const containerRef = useRef<HTMLDivElement | null>(null)
 
@@ -164,6 +164,23 @@ export function RightCollage() {
           <div style={innerStyle('1.2s')}>
             <div className="img-inner" style={{ width: '100%', height: '100%' }}>
               <img src={images[4].url} alt={images[4].alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {images[5] && (
+        <div
+          data-cursor="view"
+          className="photo photo-6"
+          style={{
+            ...photoStyle(2, '50%', undefined, undefined, '18%'),
+            transform: 'translate(-50%, 0) rotate(2deg)',
+          }}
+        >
+          <div style={innerStyle('1s')}>
+            <div className="img-inner" style={{ width: '100%', height: '100%' }}>
+              <img src={images[5].url} alt={images[5].alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
         </div>
