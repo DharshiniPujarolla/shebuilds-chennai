@@ -100,7 +100,7 @@ export function RightCollage() {
 
         {/* Smooth curved path that orbits around the central wordmark (keeps clear center) */}
         <path
-          d="M78 8 C72 14, 68 20, 66 26 C58 36, 46 40, 36 48 C28 56, 30 66, 38 72 C52 82, 68 78, 78 72"
+          d="M76 12 C70 18, 66 24, 62 32 C54 42, 46 46, 36 54 C28 64, 30 74, 38 80 C50 88, 68 82, 76 74"
           fill="none"
           stroke="url(#neonGrad)"
           strokeWidth={1.8}
@@ -112,7 +112,7 @@ export function RightCollage() {
       </svg>
       {/* Photo placements around the SheBuilds wordmark */}
       {images[0] && (
-        <div data-cursor="view" className="photo photo-1" style={photoStyle(-4, '8%', '8%', undefined, undefined)}>
+        <div data-cursor="view" className="photo photo-1" style={photoStyle(-4, '7%', '9%', undefined, undefined)}>
           <div style={innerStyle('0s')}>
             <div className="img-inner" style={{ width: '100%', height: '100%' }}>
               <img src={images[0].url} alt={images[0].alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -122,7 +122,7 @@ export function RightCollage() {
       )}
 
       {images[1] && (
-        <div data-cursor="view" className="photo photo-2" style={photoStyle(3, undefined, '8%', '8%', undefined)}>
+        <div data-cursor="view" className="photo photo-2" style={photoStyle(3, undefined, '9%', '7%', undefined)}>
           <div style={innerStyle('0.9s')}>
             <div className="img-inner" style={{ width: '100%', height: '100%' }}>
               <img src={images[1].url} alt={images[1].alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -132,7 +132,7 @@ export function RightCollage() {
       )}
 
       {images[2] && (
-        <div data-cursor="view" className="photo photo-3" style={photoStyle(-2, '8%', undefined, undefined, '18%')}>
+        <div data-cursor="view" className="photo photo-3" style={photoStyle(-2, '7%', undefined, undefined, '17%')}>
           <div style={innerStyle('0.4s')}>
             <div className="img-inner" style={{ width: '100%', height: '100%' }}>
               <img src={images[2].url} alt={images[2].alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -142,7 +142,7 @@ export function RightCollage() {
       )}
 
       {images[3] && (
-        <div data-cursor="view" className="photo photo-4" style={photoStyle(4, undefined, undefined, '8%', '18%')}>
+        <div data-cursor="view" className="photo photo-4" style={photoStyle(4, undefined, undefined, '7%', '17%')}>
           <div style={innerStyle('0.6s')}>
             <div className="img-inner" style={{ width: '100%', height: '100%' }}>
               <img src={images[3].url} alt={images[3].alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -156,8 +156,8 @@ export function RightCollage() {
           data-cursor="view"
           className="photo photo-5"
           style={{
-            // Move photo 5 to upper-middle (above the other top photos), shift slightly left and up to avoid overlap with photo-2
-            ...photoStyle(-3, '39%', '0.8%', undefined, undefined),
+            // Move photo 5 slightly left so it sits more naturally with the surrounding collage
+            ...photoStyle(-3, '34%', '1.5%', undefined, undefined),
             transform: `translateX(-50%) rotate(-3deg)`,
           }}
         >
@@ -174,7 +174,7 @@ export function RightCollage() {
           data-cursor="view"
           className="photo photo-6"
           style={{
-            ...photoStyle(2, '50%', undefined, undefined, '18%'),
+            ...photoStyle(2, '38%', undefined, undefined, '10%'),
             transform: 'translate(-50%, 0) rotate(2deg)',
           }}
         >
