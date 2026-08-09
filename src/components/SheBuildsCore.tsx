@@ -10,8 +10,8 @@ export function SheBuildsCore() {
     >
       <div className="absolute inset-0 rounded-[3rem] bg-[radial-gradient(circle_at_50%_35%,rgba(124,58,237,0.18),transparent_45%)] blur-[90px] pointer-events-none" />
 
-      <div className="relative px-4 py-5 sm:px-6 sm:py-6">
-        <span className="block font-heading font-black text-[3.8rem] leading-[0.88] tracking-[-0.08em] text-white drop-shadow-[0_0_60px_rgba(124,58,237,0.35)] sm:text-[5rem] md:text-[5.8rem]">
+      <div className="relative px-5 py-6 sm:px-8 sm:py-8">
+        <span className="block font-heading font-black text-[4rem] leading-[0.88] tracking-[-0.08em] text-white drop-shadow-[0_0_60px_rgba(124,58,237,0.35)] sm:text-[5.2rem] md:text-[6.2rem]">
           SHEBUILDS
         </span>
 

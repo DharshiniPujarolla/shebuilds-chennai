@@ -35,22 +35,22 @@ export function Hero() {
   return (
     <section 
       id="home"
-      className="relative min-h-screen pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 bg-hero-pattern flex flex-col justify-center overflow-hidden select-none"
+      className="relative min-h-[calc(100vh-72px)] pt-12 sm:pt-14 lg:pt-18 pb-8 lg:pb-12 bg-hero-pattern flex flex-col justify-start overflow-hidden select-none"
     >
       {/* Layer 1: Ambient Background Radial Glow (Parallax) */}
       <motion.div 
         style={{ x: layer1X, y: layer1Y }}
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-purple-600/20 rounded-full blur-[150px] pointer-events-none" 
+        className="absolute top-[22%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[860px] h-[860px] bg-purple-600/18 rounded-full blur-[180px] pointer-events-none" 
       />
-      <div className="absolute bottom-10 right-0 w-[450px] h-[450px] bg-violet-600/15 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-8 right-0 w-[420px] h-[420px] bg-violet-600/15 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 space-y-6 lg:space-y-8">
         
         {/* Main 2-Column Hero Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Editorial Headline & Copy */}
-          <div className="lg:col-span-6 space-y-6 sm:space-y-8 text-left">
+          <div className="lg:col-span-6 max-w-2xl space-y-6 sm:space-y-8 text-left">
             
             {/* Step 2: Pill Label */}
             <motion.div
@@ -125,7 +125,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 flex justify-center w-full"
+            className="lg:col-span-6 flex justify-center lg:justify-end w-full lg:pr-8"
           >
             <HeroVisual mousePos={mousePos} />
           </motion.div>
