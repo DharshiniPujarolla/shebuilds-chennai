@@ -30,6 +30,7 @@ export function CustomCursor() {
   const lastPosRef = useRef({ x: -100, y: -100 })
   const particleIdRef = useRef(0)
   const animFrameRef = useRef<number | null>(null)
+  const lastCursorTargetRef = useRef<HTMLElement | null>(null)
 
   const [isTouchDevice] = useState(() => {
     if (typeof window === 'undefined') return false
@@ -116,9 +117,21 @@ export function CustomCursor() {
       if (!target) return
 
       const cursorTarget = target.closest('[data-cursor]') as HTMLElement | null
+
+      // Manage cursor-active class on elements so the wand can trigger subtle shrink
+      if (lastCursorTargetRef.current && lastCursorTargetRef.current !== cursorTarget) {
+        lastCursorTargetRef.current.classList.remove('cursor-active')
+        lastCursorTargetRef.current = null
+      }
+
       if (cursorTarget) {
         const type = cursorTarget.getAttribute('data-cursor') as 'view' | 'explore' | 'button'
         setCursorState(type || 'button')
+        // Add active class to the current target to enable CSS shrink
+        if (!cursorTarget.classList.contains('cursor-active')) {
+          cursorTarget.classList.add('cursor-active')
+        }
+        lastCursorTargetRef.current = cursorTarget
       } else if (target.closest('button, a, input, select, textarea, [role="button"]')) {
         setCursorState('button')
       } else {
@@ -139,6 +152,11 @@ export function CustomCursor() {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('mousedown', handleMouseDown)
+      // cleanup any active class
+      if (lastCursorTargetRef.current) {
+        lastCursorTargetRef.current.classList.remove('cursor-active')
+        lastCursorTargetRef.current = null
+      }
     }
   }, [isTouchDevice, spawnSparkles])
 

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 export function SheBuildsCore() {
   return (
     <motion.div
+      id="shebuilds-core"
       initial={{ opacity: 0, scale: 0.92 }}
       animate={{ opacity: 1, scale: [1, 1.01, 1] }}
       transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}

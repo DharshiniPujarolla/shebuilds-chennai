@@ -1,1 +1,36 @@
 /* App.css cleared for SheBuilds Chennai custom design system */
+
+/* Subtle vertical translate float for decorative photos */
+@keyframes sb-float {
+	0% { transform: translateY(0px); }
+	50% { transform: translateY(6px); }
+	100% { transform: translateY(0px); }
+}
+
+.right-collage {
+	/* keep the collage within the right visual area */
+	position: absolute;
+	inset: 0;
+}
+
+/* Subtle shrink when wand (custom cursor) approaches a photo.
+ 	 We scale the inner container so translateY animation (on parent) continues. */
+.right-collage .photo .img-inner {
+	display: inline-block;
+	transition: transform 180ms cubic-bezier(.2,.8,.2,1);
+	transform-origin: center center;
+	will-change: transform;
+}
+.right-collage .photo.cursor-active .img-inner {
+	transform: scale(0.95) !important;
+}
+
+/* Mobile layout: top row (1,2), middle wordmark, lower row (3,4), centered photo 5 */
+@media (max-width: 640px) {
+	.right-collage .photo-1 { left: 10% !important; top: 6% !important; }
+	.right-collage .photo-2 { right: 10% !important; top: 6% !important; }
+	.right-collage .photo-3 { left: 10% !important; top: 46% !important; }
+	.right-collage .photo-4 { right: 10% !important; top: 46% !important; }
+	.right-collage .photo-5 { left: 50% !important; transform: translateX(-50%) rotate(-3deg) !important; top: 6% !important; }
+}
+

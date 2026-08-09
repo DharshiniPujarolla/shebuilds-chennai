@@ -32,17 +32,18 @@ export function FloatingBubble({ bubble }: FloatingBubbleProps) {
         x: bubble.finalPosition.x,
         y: bubble.finalPosition.y,
         opacity: 1,
+        // keep scale fixed to 1 for decorative images
         scale: 1,
       })
       return
     }
 
     const animateBubble = async () => {
+      // Animate into final position (translation + opacity only)
       await controls.start({
         x: bubble.finalPosition.x,
         y: bubble.finalPosition.y,
         opacity: 1,
-        scale: 1,
         transition: {
           x: {
             type: 'spring',
@@ -59,14 +60,6 @@ export function FloatingBubble({ bubble }: FloatingBubbleProps) {
             mass: 0.72,
             delay: bubble.burstDelay,
             duration: bubble.burstDuration,
-          },
-          scale: {
-            type: 'spring',
-            stiffness: 160,
-            damping: 16,
-            mass: 0.72,
-            delay: bubble.burstDelay,
-            duration: bubble.burstDuration * 0.7,
           },
           opacity: {
             ease: 'easeOut',
@@ -99,7 +92,7 @@ export function FloatingBubble({ bubble }: FloatingBubbleProps) {
           bubble.finalPosition.y - bubble.floatOffset.y,
           bubble.finalPosition.y,
         ],
-        scale: [1, 1.03, 1, 0.98, 1],
+        // NO scale changes: only translate (position) should animate
         transition: {
           duration: bubble.floatDuration || 7.5,
           ease: 'easeInOut',
@@ -161,10 +154,10 @@ export function FloatingBubble({ bubble }: FloatingBubbleProps) {
   return (
     <motion.div
       data-cursor={isInteractive ? (bubble.type === 'image' ? 'view' : 'explore') : undefined}
-      initial={{ x: 0, y: 0, opacity: 0, scale: 0.28 }}
+      initial={{ x: 0, y: 0, opacity: 0 }}
       animate={controls}
-      whileHover={isInteractive ? { scale: 1.08 } : undefined}
-      className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 ${wrapperClass} ${bubble.type === 'particle' ? 'pointer-events-none' : 'cursor-pointer'}`}
+      // Remove hover scale entirely; decorative only
+      className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 ${wrapperClass} pointer-events-none`}
     >
       <div className={`flex items-center justify-center ${variantSize} ${bubble.variant === 'pill' ? 'rounded-full' : bubble.variant === 'ring' ? 'rounded-full' : bubble.variant === 'star' ? 'rounded-[1.8rem]' : bubble.variant === 'dot' ? 'rounded-full' : 'rounded-[2.2rem]'} ${bubble.type === 'image' ? 'overflow-hidden border border-white/10 shadow-[0_18px_50px_rgba(0,0,0,0.24)] bg-slate-950/95' : ''}`}>
         {bubble.type === 'label' ? labelContent : renderVariant()}

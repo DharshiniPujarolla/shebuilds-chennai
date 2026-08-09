@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
-import { floatingBubblesData } from '../data/shebuildsData'
-import { FloatingBubble } from './FloatingBubble'
 import { SheBuildsCore } from './SheBuildsCore'
+import { RightCollage } from './RightCollage'
 
 interface HeroVisualProps {
   mousePos?: { x: number; y: number }
@@ -42,11 +41,8 @@ export function HeroVisual({ mousePos = { x: 0, y: 0 } }: HeroVisualProps) {
         <SheBuildsCore />
       </div>
 
-      <div className="absolute inset-0">
-        {floatingBubblesData.map((bubble) => (
-          <FloatingBubble key={bubble.id} bubble={bubble} />
-        ))}
-      </div>
+      {/* New static decorative collage (non-interactive) */}
+      <RightCollage />
     </div>
   )
 }

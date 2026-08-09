@@ -14,18 +14,22 @@ export function CommunityImage({ image, className = '' }: CommunityImageProps) {
 
   return (
     <div
+
       data-cursor="view"
-      className={`relative overflow-hidden border-2 border-purple-400/40 shadow-xl transition-all duration-300 ${shapeStyles[image.shape]} ${className}`}
+      
+
+      className={`relative overflow-hidden border-2 border-purple-400/40 shadow-xl pointer-events-none ${shapeStyles[image.shape]} ${className}`}
     >
       <img
         src={image.url}
         alt={image.alt}
-        className="w-full h-full object-cover object-center"
+
+
+        className="w-full h-full object-cover"
+
         loading="lazy"
       />
 
-      {/* Subtle overlay glow */}
-      <div className="absolute inset-0 bg-gradient-to-t from-purple-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-1.5" />
     </div>
   )
 }
